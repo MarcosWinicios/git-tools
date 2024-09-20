@@ -72,15 +72,22 @@ public class GitCloneAndCheckout {
 
     public static void main(String[] args) {
 
-        String sshUrl = "git@gitlab.gastecnologia.com.br:topazmultichannel/topaz/cdk/workspace/multichannel/multichannel-investments/multichannel-investment-fixed-income/multichannel-investment-fixed-income-deposit.git";
         // Example usage
         List<String> directories = List.of(
-                Utils.getTempPath(),
+//                Utils.getTempPath(),
                 Utils.getAbsolutePath()
 
         );
 
-        cloneAndCheckout(directories, sshUrl);
+        List<String> repositories = List.of(
+                ""
+        );
+
+        repositories.forEach(x -> {
+            cloneAndCheckout(directories, x);
+        });
+
+//        cloneAndCheckout(directories, sshUrl);
     }
 }
 
